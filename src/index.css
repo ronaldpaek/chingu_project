@@ -1,23 +1,107 @@
+/* custom properties */
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    --spacer: 1rem;
+
+    --clr-neutral-100: #fff;
+    --clr-neutral-400: #333;
+    --clr-neutral-900: #111;
+    --clr-primary-400: #3c1500;
+
+    --ff-primary: "Roboto", sans-serif;
+
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --fs-400: 1.125rem;
+    --fs-500: 1.5rem;
+    --fs-600: 2.25rem;
+    --fs-700: 3rem;
+
+    --box-shadow: 0 0.25em 1.5em rgba(0, 0, 0, 0.15);
 }
 
-/* Reset */
+/* reset */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+    line-height: 1.2;
+}
 
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+ul[class],
+ol[class] {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* utility classes */
+
+.flow-content > * + * {
+    margin-top: var(--flow-space, var(--spacer));
+}
+
+.container {
+    padding: 0 var(--spacer);
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.split > * + * {
+    margin: calc(var(--spacer) * 3) 0 0 0;
+}
+
+@media (min-width: 40em) {
+    .split {
+        flex-direction: row;
+    }
+
+
+}
+
+/* general styling */
 
 body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-400);
+  color: var(--clr-neutral-900);
+  line-height: 1.6;
+}
+
+h2,
+.h2 {
+    font-size: var(--fs-700);
+    font-weight: var(--fw-700);
+}
+
+/* components */
+
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    
 }

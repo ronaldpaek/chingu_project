@@ -4,7 +4,7 @@ const SearchBar = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch("https://www.googleapis.com/books/v1/volumes?q=harry+potter&maxResults=40")
+        fetch("https://www.googleapis.com/books/v1/volumes?q=harry+potter&index=2")
             .then(response => response.json())
             .then(data => console.log(data))
     });
