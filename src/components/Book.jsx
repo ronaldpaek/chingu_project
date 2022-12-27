@@ -1,12 +1,11 @@
-import React from 'react'
 
-const Book = ({}) => {
+const Book = (props) => {
   return (
     <div className='book'>
-        <img src="#" alt="#" />
-        <h2 className='book__title'>Book title</h2>
-        <p className='book__author'>Author</p>
-        <p className='book__publisher'>Publisher</p>
+        <img src={props.imageLinks?.thumbnail} alt="The book cover" />
+        <h2 className='book__title'>{props.title}</h2>
+        <p className='book__author'>{props.authors[0]}</p>
+        <p className='book__publisher'>{props.publisher}</p>
         <a href="#" className='btn'>See this book</a>
     </div>
   )

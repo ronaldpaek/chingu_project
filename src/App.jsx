@@ -15,7 +15,7 @@ const App = () => {
 
         try {
             const response = await axios.get(url)
-            console.log(response.data)
+            setBooks(response.data.items)
         } catch (error) {
             console.log(error)
         }
@@ -37,9 +37,7 @@ const App = () => {
             >Search</button>
         </div>
         <div className='books'>
-            {books.map((book, index) => (
-                <Book key={index}  />
-            ))}
+            {books.map(book => <Book key={book.id} {...book.volumeInfo} />)}
         </div>
     </div>
   )
