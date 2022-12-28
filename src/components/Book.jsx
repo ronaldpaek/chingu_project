@@ -1,12 +1,19 @@
 
 const Book = (props) => {
+    console.log(props)
   return (
-    <div className='book'>
-        <img src={props.imageLinks?.thumbnail} alt="The book cover" />
-        <h2 className='book__title'>{props.title}</h2>
-        <p className='book__author'>{props.authors[0]}</p>
-        <p className='book__publisher'>{props.publisher}</p>
-        <a href="#" className='btn'>See this book</a>
+    <div className='book split'>
+        <img src={
+            props.imageLinks === undefined
+                ? 'https://books.google.com/googlebooks/images/no_cover_thumb.gif'
+                : props.imageLinks?.thumbnail
+                } alt="A book cover" />
+        <div className="flow-content">
+            <h2 className='book__title'>{props?.title}</h2>
+            <p className='book__author'>{props?.authors[0]}</p>
+            <p className='book__publisher'>{props?.publisher}</p>
+            <a href={props?.infoLink} className='btn'>See this book</a>
+        </div>
     </div>
   )
 }
