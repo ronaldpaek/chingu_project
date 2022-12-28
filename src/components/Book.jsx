@@ -1,10 +1,9 @@
 
 const Book = (props) => {
-    console.log(props)
   return (
     <div className='book split'>
         <img src={
-            props.imageLinks === undefined
+            !props.imageLinks
                 ? 'https://books.google.com/googlebooks/images/no_cover_thumb.gif'
                 : props.imageLinks?.thumbnail
                 } alt="A book cover" />
